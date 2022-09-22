@@ -16,8 +16,8 @@ Code for the Planning lab of Planning and Automated Reasoning course of the MSc 
 		- *NB: during the installation, ensure to install "Anaconda Prompt" and use it for the other steps.*
 
 3.  Set-Up conda environment:
-	- *git clone https://github.com/d-corsi/AI-Lab*
-	- *conda env create -f tools/ai-lab-environment.yml*
+	- *git clone https://github.com/LM095/Planning-Lab*
+	- *conda env create -f tools/ai-lab-env.yml*
 
 ## Using the Notebook
 To start the environment and work on your assignments, navigate to the downloaded folder root *(AI-Lab)* and run:
