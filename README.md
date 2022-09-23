@@ -20,7 +20,6 @@ Code for the Planning lab of Planning and Automated Reasoning course of the MSc 
 
 3. Setup Conda environment:
    - `git clone https://github.com/LM095/Planning-Lab`
-   - `cd Planning-Lab/tools`
    - `conda env create -f tools/planning-lab-env.yml`
 
    
