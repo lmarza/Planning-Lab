@@ -22,7 +22,7 @@ Code for the Planning lab of Planning and Automated Reasoning course of the MSc 
 ## Using the Notebook
 To start the environment and work on your assignments, navigate to the downloaded folder root *(AI-Lab)* and run:
 ```
-conda activate ai-lab
+conda activate planning-lab
 jupyter notebook
 ```
 The last command will open your browser for you to start working. To open the tutorial navigate with your browser to the current lesson notebook (*Lesson_\*/lesson_\*_problem.ipynb*).
