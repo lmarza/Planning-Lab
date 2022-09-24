@@ -224,11 +224,11 @@ class CheckResult_L1A1():
         print("Max n° of nodes in memory: {}\n".format(self.student_gs_sol[2]))
 
         if solution_2_string(self.student_gs_sol[0], self.env) != [(0, 1), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
-            print(bcolors.FAIL + "Your solution is not correct, should be: \n[(0, 1), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            print(bcolors.FAIL + "> Your solution is not correct, should be: \n[(0, 1), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
         elif self.student_gs_sol[1] != 57:
-            print(bcolors.FAIL + "The number of node explored is not correct, should be: 57\n" + bcolors.ENDC)
+            print(bcolors.FAIL + "> The number of node explored is not correct, should be: 57\n" + bcolors.ENDC)
         elif self.student_gs_sol[2] != 15:
-            print(bcolors.FAIL + "The max number of nodes in memory is not correct, should be: 15\n" + bcolors.ENDC)
+            print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 15\n" + bcolors.ENDC)
         else:
             print(bcolors.BOLD + bcolors.OKGREEN + 'Your solution is correct!\n'+ bcolors.ENDC)
 
