@@ -230,7 +230,7 @@ class CheckResult_L1A1():
         elif self.student_gs_sol[2] != 15:
             print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 15\n" + bcolors.ENDC)
         else:
-            print(bcolors.BOLD + bcolors.OKGREEN + 'Your solution is correct!\n'+ bcolors.ENDC)
+            print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
 
 
 class CheckResult_L1A2():
@@ -278,9 +278,9 @@ class CheckResult_L1A2():
             print(bcolors.FAIL + "> Your necessary iterations are not correct, should be: 11\n" + bcolors.ENDC)
         elif solution_2_string(self.student_gs_sol[0], self.env) != [(0, 1), (0, 0), (1, 0), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
             print(bcolors.FAIL + "> Your solution is not correct, should be: \n[(0, 1), (0, 0), (1, 0), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
-        elif self.student_ts_sol[1] != 132:
+        elif self.student_gs_sol[1] != 132:
             print(bcolors.FAIL + "> The number of node explored is not correct, should be: 132\n" + bcolors.ENDC)
-        elif self.student_ts_sol[2] != 11:
+        elif self.student_gs_sol[2] != 11:
             print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 11\n" + bcolors.ENDC)
         else:
             print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
