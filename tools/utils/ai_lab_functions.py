@@ -284,3 +284,209 @@ class CheckResult_L1A2():
             print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 11\n" + bcolors.ENDC)
         else:
             print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+
+
+def CheckResult_UCS(solution, time, memory, env):
+    print()  
+    print(bcolors.OKCYAN + '##########################################' + bcolors.ENDC)
+    print(bcolors.OKCYAN + '#####  UNIFORM GRAPH SEARCH PROBLEM  #####' + bcolors.ENDC)
+    print(bcolors.OKCYAN + '##########################################'+ bcolors.ENDC)
+    print("Solution: {}".format(solution_2_string(solution, env)))
+    print("N° of nodes explored: {}".format(time))
+    print("Max n° of nodes in memory: {}".format(memory))
+
+
+
+class CheckResult_L2A1():
+
+    def __init__(self, student_ts_sol, student_gs_sol, heuristic, env):
+        # student_ts_sol is a list where student_ts_sol[0] = solution_ts, student_ts_sol[1] = time_ts, student_ts_sol[2] = memory_ts
+        # same fore the graph search solutions
+        self.student_ts_sol = student_ts_sol
+        self.student_gs_sol = student_gs_sol
+        self.heuristic = heuristic
+        self.env = env
+
+    def check_sol_ts(self):
+        print(bcolors.OKCYAN + '########################################################' + bcolors.ENDC)
+        print(bcolors.OKCYAN + '#######  GREEDY BEST FIRST TREE SEARCH PROBLEM  ########' + bcolors.ENDC)
+        print(bcolors.OKCYAN + '########################################################'+ bcolors.ENDC)
+
+
+        print("Your solution: {}".format(solution_2_string(self.student_ts_sol[0], self.env)))
+        print("N° of nodes explored: {}".format(self.student_ts_sol[1]))
+        print("Max n° of nodes in memory: {}\n".format(self.student_ts_sol[2]))
+
+        if self.heuristic == 'l1_norm':
+            if solution_2_string(self.student_ts_sol[0], self.env) != 'time-out':
+                print(bcolors.FAIL + "> Your solution is not correct!\n" + bcolors.ENDC)
+            elif self.student_ts_sol[1] != 10000:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 10000\n" + bcolors.ENDC)
+            elif self.student_ts_sol[2] != 7501:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 7501\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        elif self.heuristic == 'l2_norm':
+            if solution_2_string(self.student_ts_sol[0], self.env) != 'time-out':
+                print(bcolors.FAIL + "> Your solution is not correct!\n" + bcolors.ENDC)
+            elif self.student_ts_sol[1] != 10000:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 10000\n" + bcolors.ENDC)
+            elif self.student_ts_sol[2] != 7501:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 7501\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        elif self.heuristic == 'chebyshev':
+            if solution_2_string(self.student_ts_sol[0], self.env) != 'time-out':
+                print(bcolors.FAIL + "> Your solution is not correct!\n" + bcolors.ENDC)
+            elif self.student_ts_sol[1] != 10000:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 10000\n" + bcolors.ENDC)
+            elif self.student_ts_sol[2] != 7501:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 7501\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        else: 
+            print(bcolors.FAIL + f"> The heuristic '{self.heuristic}' does not exist!" + bcolors.ENDC)
+
+    def check_sol_gs(self):
+        print(bcolors.OKCYAN + '########################################################' + bcolors.ENDC)
+        print(bcolors.OKCYAN + '#######  GREEDY BEST FIRST GRAPH SEARCH PROBLEM  #######' + bcolors.ENDC)
+        print(bcolors.OKCYAN + '########################################################'+ bcolors.ENDC)
+
+
+        print("Your solution: {}".format(solution_2_string(self.student_gs_sol[0], self.env)))
+        print("N° of nodes explored: {}".format(self.student_gs_sol[1]))
+        print("Max n° of nodes in memory: {}\n".format(self.student_gs_sol[2]))
+
+        if self.heuristic == 'l1_norm':
+            if solution_2_string(self.student_gs_sol[0], self.env) != [(0, 3), (1, 3), (2, 3), (2, 2), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
+                print(bcolors.FAIL + "> Your solution is not correct, should be: [(0, 3), (1, 3), (2, 3), (2, 2), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            elif self.student_gs_sol[1] != 44:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 44\n" + bcolors.ENDC)
+            elif self.student_gs_sol[2] != 15:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 15\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+        
+        elif self.heuristic == 'l2_norm':
+            if solution_2_string(self.student_gs_sol[0], self.env) != [(0, 3), (1, 3), (2, 3), (2, 2), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
+                print(bcolors.FAIL + "> Your solution is not correct, should be: [(0, 3), (1, 3), (2, 3), (2, 2), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            elif self.student_gs_sol[1] != 44:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 44\n" + bcolors.ENDC)
+            elif self.student_gs_sol[2] != 15:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 15\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        elif self.heuristic == 'chebyshev':
+            if solution_2_string(self.student_gs_sol[0], self.env) != [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
+                print(bcolors.FAIL + "> Your solution is not correct, should be: [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            elif self.student_gs_sol[1] != 52:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 52\n" + bcolors.ENDC)
+            elif self.student_gs_sol[2] != 16:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 16\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        else:
+            print(bcolors.FAIL + f"> The heuristic '{self.heuristic}' does not exist!" + bcolors.ENDC)
+
+class CheckResult_L2A2():
+
+    def __init__(self, student_ts_sol, student_gs_sol, heuristic, env):
+        # student_ts_sol is a list where student_ts_sol[0] = solution_ts, student_ts_sol[1] = time_ts, student_ts_sol[2] = memory_ts
+        # same fore the graph search solutions
+        self.student_ts_sol = student_ts_sol
+        self.student_gs_sol = student_gs_sol
+        self.heuristic = heuristic
+        self.env = env
+
+    def check_sol_ts(self):
+        print(bcolors.OKCYAN + '#########################################' + bcolors.ENDC)
+        print(bcolors.OKCYAN + '#######  A* TREE SEARCH PROBLEM  ########' + bcolors.ENDC)
+        print(bcolors.OKCYAN + '#########################################'+ bcolors.ENDC)
+
+
+        print("Your solution: {}".format(solution_2_string(self.student_ts_sol[0], self.env)))
+        print("N° of nodes explored: {}".format(self.student_ts_sol[1]))
+        print("Max n° of nodes in memory: {}\n".format(self.student_ts_sol[2]))
+
+        if self.heuristic == 'l1_norm':
+            if solution_2_string(self.student_ts_sol[0], self.env) != [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
+                print(bcolors.FAIL + "> Your solution is not correct, should be: [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            elif self.student_ts_sol[1] != 8360:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 8360\n" + bcolors.ENDC)
+            elif self.student_ts_sol[2] != 6271:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 6271\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+        
+        elif self.heuristic == 'l2_norm':
+            if solution_2_string(self.student_ts_sol[0], self.env) != [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
+                print(bcolors.FAIL + "> Your solution is not correct, should be: [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            elif self.student_ts_sol[1] != 8800:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 8800\n" + bcolors.ENDC)
+            elif self.student_ts_sol[2] != 6601:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 6601\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        elif self.heuristic == 'chebyshev':
+            if solution_2_string(self.student_ts_sol[0], self.env) != 'time-out':
+                print(bcolors.FAIL + "> Your solution is not correct!\n" + bcolors.ENDC)
+            elif self.student_ts_sol[1] != 10000:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 10000\n" + bcolors.ENDC)
+            elif self.student_ts_sol[2] != 7501:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 7501\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        else:
+            print(bcolors.FAIL + f"> The heuristic '{self.heuristic}' does not exist!" + bcolors.ENDC)
+
+
+    def check_sol_gs(self):
+        print(bcolors.OKCYAN + '##########################################' + bcolors.ENDC)
+        print(bcolors.OKCYAN + '#######  A* GRAPH SEARCH PROBLEM  ########' + bcolors.ENDC)
+        print(bcolors.OKCYAN + '##########################################'+ bcolors.ENDC)
+
+
+        print("Your solution: {}".format(solution_2_string(self.student_gs_sol[0], self.env)))
+        print("N° of nodes explored: {}".format(self.student_gs_sol[1]))
+        print("Max n° of nodes in memory: {}\n".format(self.student_gs_sol[2]))
+
+        if self.heuristic == 'l1_norm':
+            if solution_2_string(self.student_gs_sol[0], self.env) != [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
+                print(bcolors.FAIL + "> Your solution is not correct, should be: [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            elif self.student_gs_sol[1] != 60:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 60\n" + bcolors.ENDC)
+            elif self.student_gs_sol[2] != 16:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 16\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        elif self.heuristic == 'l2_norm':
+            if solution_2_string(self.student_gs_sol[0], self.env) != [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
+                print(bcolors.FAIL + "> Your solution is not correct, should be: [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            elif self.student_gs_sol[1] != 60:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 60\n" + bcolors.ENDC)
+            elif self.student_gs_sol[2] != 16:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 16\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+
+        elif self.heuristic == 'chebyshev':
+            if solution_2_string(self.student_gs_sol[0], self.env) != [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
+                print(bcolors.FAIL + "> Your solution is not correct, should be: [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
+            elif self.student_gs_sol[1] != 60:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 60\n" + bcolors.ENDC)
+            elif self.student_gs_sol[2] != 16:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 16\n" + bcolors.ENDC)
+            else:
+                print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
+        else:
+            print(bcolors.FAIL + f"> The heuristic '{self.heuristic}' does not exist!" + bcolors.ENDC)
+
