@@ -490,3 +490,60 @@ class CheckResult_L2A2():
         else:
             print(bcolors.FAIL + f"> The heuristic '{self.heuristic}' does not exist!" + bcolors.ENDC)
 
+
+
+class CheckResult_L3():
+
+    def __init__(self, env_name, policy_render):
+        self.env_name = env_name
+        self.policy = policy_render
+    
+    def check_value_iteration(self):
+        print()
+        print(bcolors.OKCYAN +  '#################################################################' + bcolors.ENDC)
+        print(bcolors.OKCYAN + f'#######  Environment: {self.env_name} \tValue Iteration  ########' + bcolors.ENDC)
+        print(bcolors.OKCYAN +  '#################################################################'+ bcolors.ENDC)
+        print()
+
+        if self.env_name == 'LavaFloor-v0':
+            sol = np.array([['D', 'L', 'L', 'U'], ['D', 'L', 'L', 'L'], ['R', 'R', 'R', 'L']])
+            
+        elif self.env_name == 'HugeLavaFloor-v0':
+            sol = np.array([['D','D','L','L','L','U','R','D','L','L'], ['D','D','L','L','L','L','R','D','L','L'], ['D','L','U','L','U','D','L','D','U','D'], ['D','L','L','L','U','L','L','D','L','D'], ['D','L','D','L','U','L','L','D','D','L'], ['D','L','U','L','L','L','L','D','D','U'], ['D','L','L','R','D','R','R','D','L','L'], ['R','D','D','D','L','L','R','D','D','D'], ['U','R','R','R','D','D','R','R','R','D'], ['L','R','R','R','R','R','R','R','R','L']])
+        elif self.env_name == 'NiceLavaFloor-v0':
+            sol = np.array([['L', 'L', 'L', 'U'],['L', 'L', 'L', 'L'],['L', 'L', 'L', 'L']])
+
+        elif self.env_name == 'VeryBadLavaFloor-v0':
+            sol = np.array([['R', 'R', 'R', 'D'],['D', 'L', 'R', 'L'],['R', 'R', 'R', 'L']])
+            
+
+        if not np.all(self.policy==sol):
+            print(bcolors.FAIL + f"> Your policy\n {self.policy} is not optimal!\n\n Our policy is:\n {sol}" + bcolors.ENDC)
+        else:
+            print(bcolors.BOLD + bcolors.OKGREEN + f'===> Your solution is correct!\n\n Policy:\n{self.policy}'+ bcolors.ENDC)
+
+
+    def check_policy_iteration(self):
+        print()
+        print(bcolors.OKCYAN +  '##################################################################' + bcolors.ENDC)
+        print(bcolors.OKCYAN + f'#######  Environment: {self.env_name} \tPolicy Iteration  ########' + bcolors.ENDC)
+        print(bcolors.OKCYAN +  '##################################################################'+ bcolors.ENDC)
+        print()
+
+        if self.env_name == 'LavaFloor-v0':
+            sol = np.array([['D', 'L', 'L', 'U'], ['D', 'L', 'L', 'L'], ['R', 'R', 'R', 'L']])
+            
+        elif self.env_name == 'HugeLavaFloor-v0':
+            sol = np.array([['D','D','L','L','L','U','R','D','L','L'], ['D','D','L','L','L','L','R','D','L','L'], ['D','L','U','L','U','D','L','D','U','D'], ['D','L','L','L','U','L','L','D','L','D'], ['D','L','D','L','U','L','L','D','D','L'], ['D','L','U','L','L','L','L','D','D','U'], ['D','L','L','R','D','R','R','D','L','L'], ['R','D','D','D','L','L','R','D','D','D'], ['U','R','R','R','D','D','R','R','R','D'], ['L','R','R','R','R','R','R','R','R','L']])
+        
+        elif self.env_name == 'NiceLavaFloor-v0':
+            sol = np.array([['D', 'L', 'D', 'U'],['D', 'L', 'L', 'L'],['R', 'R', 'L', 'L']])
+
+        elif self.env_name == 'VeryBadLavaFloor-v0':
+            sol = np.array([['R', 'R', 'R', 'D'], ['D', 'L', 'R', 'L'],['R', 'R', 'R', 'L']])
+            
+
+        if not np.all(self.policy==sol):
+            print(bcolors.FAIL + f"> Your policy\n {self.policy} is not optimal!\n\n Our policy is:\n {sol}" + bcolors.ENDC)
+        else:
+            print(bcolors.BOLD + bcolors.OKGREEN + f'===> Your solution is correct!\n\n Policy:\n{self.policy}'+ bcolors.ENDC)
