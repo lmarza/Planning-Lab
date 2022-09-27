@@ -518,9 +518,9 @@ class CheckResult_L3():
             
 
         if not np.all(self.policy==sol):
-            print(bcolors.FAIL + f"> Your policy\n {self.policy} is not optimal!\n\n Our policy is:\n {sol}" + bcolors.ENDC)
+            print(bcolors.FAIL + f"> Your policy\n {self.policy} is not optimal!\n\nOur policy is:\n {sol}" + bcolors.ENDC)
         else:
-            print(bcolors.BOLD + bcolors.OKGREEN + f'===> Your solution is correct!\n\n Policy:\n{self.policy}'+ bcolors.ENDC)
+            print(bcolors.BOLD + bcolors.OKGREEN + f'===> Your solution is correct!\n\nPolicy:\n{self.policy}'+ bcolors.ENDC)
 
 
     def check_policy_iteration(self):
@@ -544,6 +544,46 @@ class CheckResult_L3():
             
 
         if not np.all(self.policy==sol):
-            print(bcolors.FAIL + f"> Your policy\n {self.policy} is not optimal!\n\n Our policy is:\n {sol}" + bcolors.ENDC)
+            print(bcolors.FAIL + f"> Your policy\n {self.policy} is not optimal!\n\nOur policy is:\n {sol}" + bcolors.ENDC)
         else:
-            print(bcolors.BOLD + bcolors.OKGREEN + f'===> Your solution is correct!\n\n Policy:\n{self.policy}'+ bcolors.ENDC)
+            print(bcolors.BOLD + bcolors.OKGREEN + f'===> Your solution is correct!\n\nPolicy:\n{self.policy}'+ bcolors.ENDC)
+
+
+class CheckResult_L4():
+
+    def __init__(self, policy_render):
+        self.policy = policy_render
+    
+    def check_qlearning(self):
+        print()
+        print(bcolors.OKCYAN +  '#####################################################' + bcolors.ENDC)
+        print(bcolors.OKCYAN +  '#######  Environment: Cliff-v0 \tQ-Learning  #########' + bcolors.ENDC)
+        print(bcolors.OKCYAN +  '#####################################################'+ bcolors.ENDC)
+        print()
+
+        
+        sol = np.array([['D', 'U', 'D', 'L', 'R', 'R', 'R', 'R', 'R', 'U', 'D', 'D'],
+        ['D', 'U', 'D', 'R', 'D', 'R', 'R', 'R', 'R', 'R', 'R', 'D'],
+        ['R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'D'],
+        ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U']])
+           
+        print(bcolors.BOLD + bcolors.OKGREEN + f'===> Your policy:\n\n{self.policy}'+ bcolors.ENDC)
+        print()
+        print(bcolors.BOLD + bcolors.OKGREEN + f'===> Our policy:\n\n{sol}'+ bcolors.ENDC)
+
+
+    def check_sarsa(self):
+        print()
+        print(bcolors.OKCYAN +  '################################################' + bcolors.ENDC)
+        print(bcolors.OKCYAN +  '#######  Environment: Cliff-v0 \tSARSA  ########' + bcolors.ENDC)
+        print(bcolors.OKCYAN +  '################################################'+ bcolors.ENDC)
+        print()
+
+        sol = np.array([['R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'D', 'D'],
+        ['U', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'U', 'R', 'D'],
+        ['U', 'U', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'D'],
+        ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U']])          
+        
+        print(bcolors.BOLD + bcolors.OKGREEN + f'===> Your policy:\n\n{self.policy}'+ bcolors.ENDC)
+        print()
+        print(bcolors.BOLD + bcolors.OKGREEN + f'===> Our policy:\n\n{sol}'+ bcolors.ENDC)
