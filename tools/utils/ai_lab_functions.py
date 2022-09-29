@@ -435,12 +435,12 @@ class CheckResult_L2A2():
                 print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
 
         elif self.heuristic == 'chebyshev':
-            if solution_2_string(self.student_ts_sol[0], self.env) != 'time-out':
+            if solution_2_string(self.student_ts_sol[0], self.env) != [(0, 1), (1, 1), (2, 1), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
                 print(bcolors.FAIL + "> Your solution is not correct!\n" + bcolors.ENDC)
-            elif self.student_ts_sol[1] != 10000:
-                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 10000\n" + bcolors.ENDC)
-            elif self.student_ts_sol[2] != 7501:
-                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 7501\n" + bcolors.ENDC)
+            elif self.student_ts_sol[1] != 16976:
+                print(bcolors.FAIL + "> The number of node explored is not correct, should be: 16976\n" + bcolors.ENDC)
+            elif self.student_ts_sol[2] != 12733:
+                print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 12733\n" + bcolors.ENDC)
             else:
                 print(bcolors.BOLD + bcolors.OKGREEN + '===> Your solution is correct!\n'+ bcolors.ENDC)
 
