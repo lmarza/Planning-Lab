@@ -6,6 +6,11 @@ import matplotlib.pyplot as plt
 
 class Node:
     def __init__(self, state, parent=None, pathcost=0, value=0):
+        if parent == None:
+            self.depthcost = 0
+        else:
+            self.depthcost = parent.depthcost + 1
+
         self.state = state
         self.pathcost = pathcost
         self.value = value
@@ -206,8 +211,8 @@ class CheckResult_L1A1():
 
         if solution_2_string(self.student_ts_sol[0], self.env) != [(0, 1), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
             print(bcolors.FAIL + "> Your solution is not correct, should be: \n[(0, 1), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
-        elif self.student_ts_sol[1] != 103721:
-            print(bcolors.FAIL + "> The number of node explored is not correct, should be: 103721\n" + bcolors.ENDC)
+        elif self.student_ts_sol[1] != 103723:
+            print(bcolors.FAIL + "> The number of node explored is not correct, should be: 103723\n" + bcolors.ENDC)
         elif self.student_ts_sol[2] != 77791:
             print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 77791\n" + bcolors.ENDC)
         else:
@@ -225,8 +230,8 @@ class CheckResult_L1A1():
 
         if solution_2_string(self.student_gs_sol[0], self.env) != [(0, 1), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]:
             print(bcolors.FAIL + "> Your solution is not correct, should be: \n[(0, 1), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (4, 1), (4, 2), (4, 3)]\n" + bcolors.ENDC)
-        elif self.student_gs_sol[1] != 57:
-            print(bcolors.FAIL + "> The number of node explored is not correct, should be: 57\n" + bcolors.ENDC)
+        elif self.student_gs_sol[1] != 59:
+            print(bcolors.FAIL + "> The number of node explored is not correct, should be: 59\n" + bcolors.ENDC)
         elif self.student_gs_sol[2] != 15:
             print(bcolors.FAIL + "> The max number of nodes in memory is not correct, should be: 15\n" + bcolors.ENDC)
         else:
