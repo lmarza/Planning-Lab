@@ -90,7 +90,7 @@ class ObsGrid(Env):
         self.done = False
         #self.RS = (self.R.min(axis=1).min(axis=0))
         #self.RS[-1] = 1
-        self.seed()
+        self.seed(1)
         self.reset()
 
     def is_terminal(self, state):
